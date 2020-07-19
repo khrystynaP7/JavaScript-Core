@@ -73,7 +73,7 @@ if (hours >= 23 && hours < 5) {
    console.log ('Good evening')
 }
 
-switch (hours) {
+switch (true) {
     case  (hours >= 23 &&  hours < 5):
     console.log('Good night!');
     break;
