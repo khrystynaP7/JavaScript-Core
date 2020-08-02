@@ -1,0 +1,164 @@
+ <!DOCTYPE html>
+ <html>
+	 <head>
+	 </head>
+
+	<!--  Task1
+	 <body>	
+		<div id="test">First</div>
+
+		<script>
+			document.getElementById("test").innerHTML = "Last";
+			//document.querySelector("#test").innerHTML = 'Last';	 
+		</script>
+
+	</body>-->
+
+	 <!--  Task2
+	 <body>
+		<img class="image" src="dog.jpg">
+
+		<script>
+			image = document.querySelector('.image');
+			image.src = 'cat.jpg';
+			console.log(image)
+		</script>
+
+     </body>-->
+
+     <!--  Task 3
+    <body>
+		<h2>Article header</h2>      
+	        <div id="text">
+		        <p>First paragraph</p>
+		        <p>Second paragraph</p>
+		        <p>Third paragraph</p>
+	      	</div>
+		<p>Another text</p>
+
+		<script>
+			let divs = document.getElementById('text');
+			let children1 = divs.children;
+			for(let i = 0; i < children1.length; i++) {
+				console.log('Selector text ' + i + ': ' + children1[i].textContent)
+			}
+
+		</script>
+    </body>-->
+
+     <!--  Task 4
+    <body>
+    	<ul id="list">
+    		<li>1</li>
+    		<li>2</li>
+    		<li>3</li>
+    		<li>4</li>
+    		<li>5</li>
+    	</ul>
+
+    <script>
+    	let list = document.getElementById('list');
+		let children1 = list.children;
+
+    	//Result 1
+    	/*
+    	alert(children1[0].textContent);
+    	alert(children1[children1.length-1].textContent);
+    	alert(children1[1].textContent);
+    	alert(children1[2].textContent);
+    	alert(children1[3].textContent);
+    	*/
+
+    	//Rasult 2
+    	/*
+    	alert('Result: ' + children1[0].textContent + ', ' + children1[4].textContent + ', ' + children1[1].textContent + ', ' + children1[2].textContent + ', ' + children1[3].textContent)
+    	*/
+
+    </script>
+    </body>-->
+
+    <!--  Task 5
+    <body>
+		<h1>I'am a big header!!!</h1>
+        <div id="myDiv">
+            <p>First paragraph</p>
+            <p>Second paragraph</p>
+            <p>Third paragraph</p>
+            <p>Fourth paragraph</p>
+        </div>
+        <ul id="myList">
+            <li>Make</li>
+            <li>me</li>
+            <li>horizontal!</li>
+        </ul>
+        <span>Make me invisible, please!</span>
+
+        <script>
+        	let header = document.getElementsByTagName('h1')[0];
+        	header.style.backgroundColor = 'lightgreen';
+
+    		let divs = document.getElementById('myDiv');
+			let children1 = divs.children;
+    		let unorderedList = document.getElementById('myList');
+    		let children2 = unorderedList.children;
+
+			children1[0].style.fontWeight = 'bold';
+			children1[1].style.color = 'red';
+			children1[2].style.textDecoration = 'underline';
+			children1[3].style.fontStyle = 'italic';
+
+			children2[0].style.display = 'inline';
+			children2[1].style.display = 'inline';
+			children2[2].style.display = 'inline';
+
+
+        	let invisible = document.getElementsByTagName('span')[0];
+        	invisible.style.display = 'none';
+
+        </script>
+	</body>-->
+
+	<!--  Task 6
+	    <body>
+			<input type="text" id="input1" value="Text1">
+			<input type="text" id="input2" value="Text2">
+
+			<script>
+				let message1 = prompt('Please enter message 1');
+				let message2 = prompt('Please enter message 2');
+				let input1 = document.getElementById('input1');
+				let input2 = document.getElementById('input2');
+				input1.setAttribute('value', message1);
+				input2.setAttribute('value', message2);
+
+
+				//Raplace input
+				input1.removeAttribute('value');
+				input2.removeAttribute('value');
+    			input1.setAttribute('value', message2);
+				input2.setAttribute('value', message1);
+
+			</script>
+		</body>-->
+
+		Task 7
+		
+		<script>
+		let body = document.createElement('body');
+		document.body = body;
+
+		let main = document.createElement('main');
+		main.setAttribute('class', 'mainClass check item');
+		body.append(main);
+
+		let div = document.createElement('div');
+		div.setAttribute('id', 'myDiv');
+		main.append(div);
+
+		let p = document.createElement('p');
+		p.innerHTML = 'First paragraph';
+		div.append(p);
+
+		</script>
+
+ </html>

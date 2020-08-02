@@ -78,11 +78,28 @@ class Worker {
 
     set setExp(value) {
         this._experience = value;
+        Worker.instances.push(this);
     }
 
     showSalaryWithExperience() {
-        console.log(this.dayRate * this.workingDays * this._experience)
+        return this.dayRate * this.workingDays * this._experience
     }    
+}
+Worker.instances = [];
+let worker1 = new Worker("John Johnson", 20, 23);
+worker1.setExp = 1.5;
+let worker2 = new Worker("Tom Tomson", 48, 22);
+worker2.setExp = 1.5;
+let worker3 = new Worker("Andy Ander", 29, 23);
+worker3.setExp = 1.5;
+;
+sorted = Worker.instances.sort(function(a, b) {
+    return a.showSalaryWithExperience() - b.showSalaryWithExperience()
+})
+
+let result = '';
+for(let i = 0; i < sorted.length; i++) {
+    result += sorted[i].fullName + ': ' + sorted[i].showSalaryWithExperience() + '\n'
 }
 
 //Task 5
@@ -142,3 +159,4 @@ function handleFigures(figures) {
 
 let figures = [new Triangle(4, 5), new Square(7), new Circle(5)];
 console.log(handleFigures(figures));
+
