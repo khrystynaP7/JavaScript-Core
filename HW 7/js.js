@@ -118,26 +118,32 @@ window.addEventListener('resize', resized);
 */
 
 //Task 7
-let select = document.getElementById('cities');
-let paragraph = document.getElementsByTagName('p');
+let cityArr = {
+	'ger': ['Berlin', 'Dresden', 'Munich', 'Stutgard'],
+	'usa': ['New York', 'Washington', 'Chikago', 'Boston'],
+	'ukr': ['Lviv', 'Kyiv', 'Ternopil', 'Odesa']
+}
 
-if (document.querySelector('[value="ger"]').selected == true) {
-	select.insertAdjacentHTML('afterbegin', 
-	`<option>Berlin</option>
-	<option>Munich</option>
-	<option>Dresden</option>
-	<option>Schtutgard</option>`)
-} else if (document.querySelector('[value="usa"]').selected == true) {
-	select.remove(0)
-	select.insertAdjacentHTML('afterbegin', 
-			`<option>Washington</option>
-			<option>New York</option>
-			<option>Broston</option>
-			<option>Los Angeles</option>`)
-} else if (document.querySelector('[value="ukr"]').selected == true) {
-	select.insertAdjacentHTML('afterbegin', 
-			`<option>Lviv</option>
-			<option>Kyiv</option>
-			<option>Kharkiv</option>
-			<option>Ternopil</option>`)
+let countries = document.getElementById('country');
+countries.addEventListener('change', citiesCreate);
+countries.addEventListener('change', createParagraph);
+
+let cities = document.getElementById('cities');
+cities.addEventListener('change', createParagraph);
+
+function citiesCreate() {
+	cities.innerHTML = '';
+	let selectedCountry = countries.value;
+	for (let i = 0; i < cityArr[selectedCountry].length; i++) {
+		let citiesOption = document.createElement('option');
+		citiesOption.innerHTML = cityArr[selectedCountry][i];
+		cities.appendChild(citiesOption);
+	}
+}
+
+let parag = document.querySelector('p');
+function createParagraph() {
+	parag.innerHTML = '';
+	parag.innerHTML = countries.options[countries.selectedIndex].text + ', '
+	+ cities.options[cities.selectedIndex].text;
 }
