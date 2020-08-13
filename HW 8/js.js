@@ -29,13 +29,9 @@
 // resultFinal.unshift(result[0]);
 
 //Task 4
-// let firstWord = /^\w+/ig;
-// let lastWord = /\w+$/ig;
+// let replace = /(\w+)\s(\w+)/;
 // let string = "Java Script";
-// let firstWordFound = string.match(firstWord);
-// let lastWordFound = string.match(lastWord);
-// let result = '';
-// result += lastWordFound + ', ' + firstWordFound;
+// let result = string.replace(replace, "$2, $1");
 
 //Task 5
 // function cardNumber (num) {
@@ -52,22 +48,21 @@
 
 //Task 6
 // function checkEmail (str) {
-//     let regExp = /^\w+_\w+@\w+\.\w+?/   
+//     let regExp = /^[A-Za-z]{1}\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,})+$/   
 //     if (regExp.test(str)) {
 //         return 'Email is correct!'
 //     } else {
 //         return 'Email is not correct!'
 //     }
 // }
-// checkEmail('my_mail@gmail.com');
+// checkEmail('_my_mail@gmail.com');
 
 //Task 7
 function checkLogin(login) {
-    let regExp = /^[A-Za-z]{1}\w\d\.\d\w?/  
-    if (regExp.test(login)) {
-        return true;
-
-    } else {
-        return false;
-    }
+    let regExp = /^[A-Za-z]{1}[A-Za-z0-9\.]{1,9}$/; 
+    let requiredNumber = /[0-9\.]+/g;
+    let resultNumber = login.match(requiredNumber);
+    let result = regExp.test(login);
+    console.log(`${login} is ${result} - ${resultNumber}`);
 }
+checkLogin('ee1.1ret3');
