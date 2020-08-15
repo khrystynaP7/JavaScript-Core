@@ -5,17 +5,18 @@
 //$("h2[class='head']").css('backgroundColor', 'green').find("[class='inner']").css('fontSize', '35px');
 
 //Task 3
-// $div = $('div')
-
-// $.each( $div, function( key, value ) {
-//   value.before("h3");
-// });
-
-
-$("div").insertBefore("h3");
-$("h3+div").remove();
-$.before("h3").remove("div")
-
+// $("h3+div:first").insertBefore("h3:first");
+// $("h3+div:last").insertBefore("h3:last");
 
 //Task 4
-//$("input").on("click", function() {this.addClass("checked")})
+let i = 0
+let $inputs = $('input')
+$('input').each(function(index) {
+	$(this).on('click', function(){
+	    $(this).attr('checked', 'checked'); 
+	    i++;
+	    if (i >= 3) {
+			$('input').prop('disabled', true)
+		}
+	});
+})
