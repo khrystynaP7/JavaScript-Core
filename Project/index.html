@@ -8,40 +8,37 @@
 </head>
 <body>
 	<div class="app">
-
 		<div class="default-video">
 			<video loop="-1">
 				<source src="./videos/rain.mp4" type="video/mp4">
 			</video>
-			
 		</div>
-
-		<div class="time">
-			<button data-time="60">1 Minute</button>
-			<button data-time="120">2 Minutes</button>
-			<button data-time="300">5 Minutes</button>
-
+		<div class="sound">
+			<button data-sound="./sounds/rain.mp3" data-video="./videos/rain.mp4">
+				<img src="./images/rain.svg" alt="rain">
+			</button>
+			<button data-sound="./sounds/beach.mp3" data-video="./videos/beach.mp4">
+				<img src="./images/beach.svg" alt="beach">
+			</button>
 		</div>
 		<div class="player">
 			<audio class="audio">
 				<source src="./sounds/rain.mp3">
 			</audio>
             	<img src="./images/play.svg" class="play"></img>
-            	<svg class="track-outline" width="453" height="453" viewBox="0 0 453 453" fill="none" xmlns="http://www.w3.org/2000/svg">
-                	<circle cx="226.5" cy="226.5" r="216.5" stroke="white" stroke-width="20"/>
+            	<svg class="track-outline" width="453" height="453" viewBox="0 0 453 453" fill="none">
+                	<circle cx="50%" cy="50%" r="200" stroke="white" stroke-width="20"/>
                 </svg>
-                <svg class="moving-outline" width="453" height="453" viewBox="0 0 453 453" fill="none" xmlns="http://www.w3.org/2000/svg">
-                	<circle cx="226.5" cy="226.5" r="216.5" stroke="#018EBA" stroke-width="20"/>
+                <svg class="moving-outline" width="453" height="453" viewBox="0 0 453 453" fill="none">
+                	<circle cx="50%" cy="50%" r="200" stroke="lightblue" stroke-width="20"/>
                 </svg>
                 <h3 class="time-display">00:00</h3>
         </div>
-		<div class="sound">
-			<button data-sound="./sounds/rain.mp3" data-video="./videos/rain.mp4">
-				<img src="./images/rain.svg" alt="rain">
-			</button>
-			<button data-sound="./sounds/beach.mp3" data-video="./videos/beach.mp4">
-				<img src="./images/beach.svg" alt="">
-			</button>
+		<div class="time">
+			<button data-time="60">1 Minute</button>
+			<button data-time="120">2 Minutes</button>
+			<button data-time="300">5 Minutes</button>
+
 		</div>
 	</div>
 

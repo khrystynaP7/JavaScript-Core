@@ -74,11 +74,11 @@ video {
 }
 
 .sound button:nth-child(1) {
-	background-color: #4972a1
+	background-color: lightblue;
 }
 
 .sound button:nth-child(2) {
-	background-color: #a14f49
+	background-color: darkred;
 }
 
 .sound button img {

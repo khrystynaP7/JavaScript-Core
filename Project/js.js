@@ -7,13 +7,13 @@ const app = () => {
 	const timeDisplay = document.querySelector('.time-display');
 	const timeSelect = document.querySelectorAll(".time button");
 
-
 	const outlineLength = outline.getTotalLength();
 
-	let fakeDuration = 600;
+	let fakeDuration = 300;
 	outline.style.strokeDasharray = outlineLength;
 	outline.style.strokeDashoffset = outlineLength;
 
+	//Sound change
 	sounds.forEach(sound => {
 		sound.addEventListener('click', function() {
 			song.src = this.getAttribute('data-sound');
@@ -22,20 +22,16 @@ const app = () => {
 		})
 	})
 
+
+	//Play button launch
 	play.addEventListener('click', () => {
 		checkPlaying(song);
 	})
 
-	timeSelect.forEach(option => {
-		option.addEventListener('click', function() {
-			 fakeDuration = this.getAttribute('data-time');
-			 timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60
-			 	)}`
-		})
-	})
 
+	//Check if the song is playing
 	const checkPlaying = song => {
-		if(song.paused) {
+	if(song.paused) {
 		song.play();
 		video.play();
 		play.src = './images/pause.svg';
@@ -45,6 +41,15 @@ const app = () => {
 		play.src = './images/play.svg';
 	}}
 
+	//Set new meditation time
+	timeSelect.forEach(option => {
+		option.addEventListener('click', function() {
+			 fakeDuration = this.getAttribute('data-time');
+			 timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}`
+		})
+	})
+
+	//Change of the current time
 	song.ontimeupdate = () => {
 		let currentTime = song.currentTime;
 		let elapsed = fakeDuration - currentTime;
